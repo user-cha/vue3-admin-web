@@ -1,5 +1,5 @@
 <!--
- * @Autor: ll
+ * @Autor: wu
  * @Date: 2022-03-28 16:09:55
  * @Description: 图片上传
  * v-model:single limit默认为1, 返回string类型
