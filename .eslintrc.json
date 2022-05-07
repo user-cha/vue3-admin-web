@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:vue/vue3-strongly-recommended", // 采用vue3强烈推荐规则校验
+    "plugin:@typescript-eslint/recommended", // 为ts提供eslint校验规则
+    "plugin:prettier/recommended" // prettier的不规范格式以esilnt错误抛出
+  ],
+  "parser": "vue-eslint-parser", // 需要配置eslint解析器，不然vue3 template报错
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": ["vue", "@typescript-eslint"],
+  "rules": {
+    "vue/multi-word-component-names": "off", // 无需使用驼峰法命名组件
+    "@typescript-eslint/no-explicit-any": "error", // 不允许声明变量/对象为any类型
+    "no-var": "error", // 不允许使用var定义变量或者常量
+    "eqeqeq": "error", // 不允许使用 "==" 只支持使用 "==="
+    //  和.prettierrc.json printWidth 配合
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 150
+      }
+    ]
+  }
+}

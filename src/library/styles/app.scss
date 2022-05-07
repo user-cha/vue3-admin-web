@@ -1,0 +1,171 @@
+html,
+body {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, SimSun, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/** 修复element plus 部分样式问题 */
+
+// 修改notify的内容按照字母换行
+.el-notification__content {
+  text-align: initial;
+  word-break: break-all;
+}
+// 给form表单默认添加:
+.el-form-item {
+  .el-form-item__label::after {
+    content: ':';
+  }
+}
+// 给dialog弹窗缩短内间距
+.el-dialog__body {
+  padding: 15px;
+}
+// input 添加动画效果
+.el-input__inner {
+  transition: all 0.3s;
+}
+// 修复upload tip在表单显示间距过大的问题
+.el-upload__tip {
+  line-height: 1em;
+}
+
+/** 路由过渡动画 */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s;
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(-15px);
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+/** 常用的公共布局样式 */
+
+// 间隔容器
+.app-space {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+// 公共间隔样式
+.app-ml {
+  margin-left: 10px;
+}
+.app-mr {
+  margin-right: 10px
+}
+.app-mt {
+  margin-top: 10px;
+}
+.app-mb {
+  margin-bottom: 10px;
+}
+// 纵向间隔
+.app-space-vertical {
+  @extend .app-space;
+  flex-direction: column;
+}
+// 页面公共容器
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 0 3px 0 rgb(227 227 227 / 50%);
+  border-radius: 5px 5px 0 0;
+  padding: 15px;
+
+  // 页面 - 部分结构
+  .app-section {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+  
+    .app-aside {
+      margin-bottom: 10px;
+      line-height: 32px;
+      font-size: 14px;
+      color: var(--el-text-color-regular);
+      flex-shrink: 0;
+      font-weight: 500;
+  
+      &::after {
+        content: ':';
+        display: inline;
+      }
+    }
+  
+    .app-article {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+  
+      .app-item {
+        margin-left: 15px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .app-table {
+    flex: 1;
+    overflow: hidden;
+    
+    .el-link {
+      font-weight: 400;
+      font-size: 13px;
+      margin-right: 10px;
+    
+      .el-icon {
+        margin-right: 3px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .app-pagination {
+    margin-top: 10px;
+
+    .el-pagination {
+      justify-content: center;
+    }
+  }
+}
+// 行容器
+.app-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  line-height: 32px;
+  font-size: 14px;
+  color: #606266;
+  
+  // 列容器
+  .app-col {
+    flex: 1;
+  }
+  .app-label {
+    @extend .el-form-item__label;
+  }
+  .app-value {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    position: relative;
+  }
+}

@@ -1,0 +1,115 @@
+/*
+ * @Autor: ll
+ * @Date: 2022-03-31 17:47:17
+ * @Description: Layout主题样式
+ */
+
+// 黑暗主题
+$themeMainDark: #545c64;
+$themeTextDark: #ffffff;
+$themeHoverDark: #ffd04b;
+$themeBgColorDark: #434a50;
+
+.app-layout-dark {
+  
+  // 头部
+  .app-header {
+    background-color: $themeMainDark;
+
+    .theme {
+      .el-link {
+        color: $themeTextDark;
+
+        &:hover {
+          color: $themeHoverDark;
+        }
+      }
+    }
+
+    .user-info {
+      color: $themeTextDark;
+
+      &.user-info-hover {
+        color: $themeHoverDark;
+        background-color: $themeBgColorDark;
+      }
+    }
+  }
+  // 左侧菜单
+  .app-left-menus {
+    background: $themeMainDark;
+  }
+  // 底部收缩
+  .toggle-sidebar {
+    color: $themeTextDark;
+
+    &:hover {
+      color: $themeHoverDark;
+      background-color: $themeBgColorDark;
+    }
+  }
+  // 面包屑
+  .app-breadcrumb {
+    background-color: $themeMainDark;
+
+    .el-breadcrumb__item {
+      .el-breadcrumb__inner {
+        color: $themeTextDark;
+      }
+      &:not(:last-child) .el-breadcrumb__inner:hover {
+        color: $themeHoverDark;
+      }
+    }
+    
+  }
+}
+
+// 光明主题 部分样式颜色直接继承element 的变量
+$themeMainLightk: #ffffff;
+.app-layout-light {
+
+  // 头部
+  .app-header {
+    background-color: $themeMainLightk;
+
+    .theme {
+      .el-link {
+        color: var(--el-link-text-color);
+
+        &:hover {
+          color: var(--el-link-hover-text-color);
+        }
+      }
+    }
+
+    .user-info.user-info-hover {
+      color: var(--el-color-primary);
+      background-color: var(--el-color-primary-light-9);
+    }
+  }
+  // 左侧菜单
+  .app-left-menus {
+    background: $themeMainLightk;
+  }
+  // 底部收缩
+  .toggle-sidebar {
+    color: #000000;
+  
+    &:hover {
+      color: var(--el-color-primary);
+    }
+  }
+  // 面包屑
+  .app-breadcrumb {
+    background-color: $themeMainLightk;
+
+    .el-breadcrumb__item {
+      .el-breadcrumb__inner {
+        color: var(--el-text-color-primary);
+      }
+      &:not(:last-child) .el-breadcrumb__inner:hover {
+        color: var(--el-color-primary);
+      }
+    }
+  }
+}
